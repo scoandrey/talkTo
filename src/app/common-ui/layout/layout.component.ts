@@ -6,6 +6,6 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss',
+  styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {}
