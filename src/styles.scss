@@ -2,13 +2,13 @@
 
 :root {
   --dark-color: #000000;
-  --light-color: #ffffff;
+  --light-color: #05f7f4;
   --primary-color: #ae7aff;
 }
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -18,6 +18,7 @@ body {
   font-family: "JetBrains Mono", sans-serif;
   background-color: var(--dark-color);
   color: var(--light-color);
+  background-image: url(assets/images/background.jpg);
 }
 
 .skill-tag {
@@ -32,6 +33,7 @@ body {
 }
 
 .btn {
+  width: 100%;
   border: none;
   background-color: var(--primary-color);
   color: var(--dark-color);
@@ -39,6 +41,14 @@ body {
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
+  cursor: pointer;
+}
+
+.h1 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+  margin-bottom: 60px;
 }
 
 .h6 {
@@ -53,4 +63,29 @@ body {
   font-weight: 400;
 }
 
+.form{
+  margin-right: 50px;
+}
 
+.login-label {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 20px;
+}
+
+.login-input {
+  margin-bottom: 20px;
+  width: 100%;
+  margin-top: 8px;
+  display: block;
+  border: 1px solif var(--light-color);
+  border-radius: 4px;
+  padding: 12px 20px;
+  background: var(--dark-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "JetBrains Mono", sans-serif;
+  color: var(--light-color);
+}
