@@ -1,18 +1,24 @@
-
-<form action="login-form" class="form">
-  <h1 class="h1">Enter</h1>
-<label class="login-label">
-  Username
-  <input class="login-input" text="text" placeholder="Login">
-</label>
-<label class="login-label">
-  Password
-  <input class="login-input" text="text" placeholder="Password">
-</label>
-<button class="btn">Sign In</button>
+<form action="login-form" class="form" [formGroup]="form">
+  <h1 class="h1 mb60">Enter</h1>
+  <label class="login-label mb16">
+    Username
+    <input
+      formControlName="username"
+      class="login-input"
+      text="text"
+      placeholder="Login"
+    />
+  </label>
+  <label class="login-label mb32">
+    Password
+    <input
+      formControlName="password"
+      class="login-input"
+      text="text"
+      placeholder="Password"
+    />
+  </label>
+  <button class="btn btn-shadow" type="submit">Sign In</button>
 </form>
-<img
-  src="assets/images/svg/logo-big.png"
-  alt="logo"
-/>
+<img src="assets/images/svg/logo-big.png" alt="logo" />
 \
