@@ -1,11 +1,11 @@
-<form action="login-form" class="form" [formGroup]="form">
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <h1 class="h1 mb60">Enter</h1>
   <label class="login-label mb16">
     Username
     <input
       formControlName="username"
       class="login-input"
-      text="text"
+      type="text"
       placeholder="Login"
     />
   </label>
@@ -14,11 +14,10 @@
     <input
       formControlName="password"
       class="login-input"
-      text="text"
+      type="password"
       placeholder="Password"
     />
   </label>
   <button class="btn btn-shadow" type="submit">Sign In</button>
 </form>
 <img src="assets/images/svg/logo-big.png" alt="logo" />
-\
