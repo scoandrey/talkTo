@@ -26,7 +26,7 @@ export class LoginPageComponent {
   onSubmit(): void {
     if (this.form.valid) {
       const payload: LoginForm = this.form.getRawValue();
-      this.authService.login(payload);
+      this.authService.login(payload).subscribe();
     }
   }
 }
