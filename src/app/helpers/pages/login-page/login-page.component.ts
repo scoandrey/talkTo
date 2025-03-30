@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../auth/auth.service';
+import { Router } from '@angular/router';
 
 interface LoginForm {
   username: string;
@@ -16,6 +17,7 @@ interface LoginForm {
 })
 export class LoginPageComponent {
   private authService = inject(AuthService);
+  private router = inject(Router);
   private fb = inject(FormBuilder);
 
   form = this.fb.nonNullable.group({
@@ -26,7 +28,9 @@ export class LoginPageComponent {
   onSubmit(): void {
     if (this.form.valid) {
       const payload: LoginForm = this.form.getRawValue();
-      this.authService.login(payload).subscribe();
+      this.authService.login(payload).subscribe((res) => {
+        this.router.navigate(['']);
+      });
     }
   }
 }
