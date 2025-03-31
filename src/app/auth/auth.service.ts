@@ -11,9 +11,14 @@ export class AuthService {
   http = inject(HttpClient);
   coockieService = inject(CookieService);
   baseApiUrl = 'https://icherniakov.ru/yt-course/auth/';
+
   token!: string | null;
   refreshToken!: string | null;
+
   get isAuth() {
+    if (!this.token) {
+      this.token = this.coockieService.get('token');
+    }
     return !!this.token;
   }
   login(payload: { username: string; password: string }) {
@@ -24,7 +29,6 @@ export class AuthService {
       tap((val) => {
         this.token = val.access_token;
         this.refreshToken = val.refresh_token;
-
         this.coockieService.set('token', this.token);
         this.coockieService.set('refreshToken', this.refreshToken);
       })

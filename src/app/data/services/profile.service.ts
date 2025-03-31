@@ -11,6 +11,9 @@ export class ProfileService {
   baseApiUrl = 'https://icherniakov.ru/yt-course/';
 
   getTestAccounts(): Observable<any> {
-    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`);
+    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
+  }
+  getMe(){
+    return this.http.get<Profile>(`${this.baseApiUrl}account/me`)
   }
 }
