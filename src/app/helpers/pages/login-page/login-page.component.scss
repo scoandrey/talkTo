@@ -1,7 +1,30 @@
-:host{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100dvh;
-    align-items: center;
-    margin: 0 5%;
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100dvh;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.form {
+  width: 440px;
+}
+
+.form,
+.logo {
+  place-self: center;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-btn-eye {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+//   transform: translateY(-50%);
+  cursor: pointer;
 }
