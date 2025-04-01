@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../auth/auth.service';
 import { Router } from '@angular/router';
@@ -20,12 +20,15 @@ export class LoginPageComponent {
   private router = inject(Router);
   private fb = inject(FormBuilder);
 
+  isPasswordVisible = signal<boolean>(false);
+
   form = this.fb.nonNullable.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
   });
 
   onSubmit(): void {
+    this.isPasswordVisible.set(true);
     if (this.form.valid) {
       const payload: LoginForm = this.form.getRawValue();
       this.authService.login(payload).subscribe((res) => {

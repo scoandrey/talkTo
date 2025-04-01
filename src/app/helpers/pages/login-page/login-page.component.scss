@@ -19,12 +19,20 @@
   position: relative;
 }
 
+.login-input {
+  margin: 0;
+}
+
 .password-btn-eye {
   background: none;
   border: none;
   position: absolute;
   top: 50%;
   right: 12px;
-//   transform: translateY(-50%);
+  //   transform: translateY(-50%);
   cursor: pointer;
+}
+
+.password-btn-eye.active {
+  color: var(--primary-color);
 }

@@ -15,10 +15,15 @@
       <input
         formControlName="password"
         class="login-input"
-        type="password"
+        [type]="isPasswordVisible() ? 'text' : 'password'"
         placeholder="Password"
       />
-      <button class="password-btn-eye">
+      <button
+        class="password-btn-eye"
+        [class.active]="isPasswordVisible()"
+        (click)="isPasswordVisible.set(!isPasswordVisible())"
+        type="button"
+      >
         <svg
           width="19px"
           height="17px"
