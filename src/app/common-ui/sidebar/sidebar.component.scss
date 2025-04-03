@@ -16,12 +16,20 @@
   background: none;
   border: none;
   background: none;
-  color: var(--light-color);
+  color: white;
   &:hover,
   &:focus-visible {
     background: var(--dark-hover-color);
+    color: var(--primary-color);
   }
   display: grid;
   grid-template-columns: 16px 1fr max-content;
   grid-gap: 12px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  width: 100%;
+  text-align: left;
+  border-radius: 2px;
 }
