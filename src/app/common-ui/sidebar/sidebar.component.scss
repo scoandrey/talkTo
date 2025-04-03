@@ -1,4 +1,27 @@
-:host{
-    display: block;
-    padding: 20px 12px;
+:host {
+  display: block;
+  padding: 20px 12px;
+}
+
+.main-menu-list {
+  display: grid;
+  grid-gap: 8px;
+  list-style: none;
+}
+
+.menu-item {
+  padding: 16% 12px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  border: none;
+  background: none;
+  color: var(--light-color);
+  &:hover,
+  &:focus-visible {
+    background: var(--dark-hover-color);
+  }
+  display: grid;
+  grid-template-columns: 16px 1fr max-content;
+  grid-gap: 12px;
 }
