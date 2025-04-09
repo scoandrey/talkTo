@@ -13,7 +13,8 @@
 
 .menu-item {
   display: flex;
-  align-items: center; 
+  align-items: center;
+  margin-bottom: 20px;
   gap: 12px;
   width: 100%;
   padding: 0;
@@ -32,18 +33,35 @@
     background: var(--dark-hover-color);
     color: var(--primary-color);
 
-    svg {
+    app-icon {
       color: var(--primary-color);
+      fill: currentColor;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    outline-offset: 2px;
+  }
+
+  &.active {
+    background: var(--dark-hover-color);
+    color: var(--primary-color);
+
+    app-icon {
+      color: var(--primary-color);
+      fill: currentColor;
     }
   }
 }
 
-.menu-item svg {
+.menu-item app-icon {
   width: 16px;
   height: 16px;
   display: inline-block;
   vertical-align: middle;
-  fill: currentColor; 
+  fill: currentColor;
+  flex-shrink: 0;
   position: relative;
-  top: -2px; 
+  top: -2px;
 }
