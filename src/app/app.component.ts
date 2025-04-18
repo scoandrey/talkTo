@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProfileCardComponent } from './common-ui/profile-card/profile-card.component';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './common-ui/sidebar/sidebar.component';
+import { ProfileService } from './data/services/profile.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,13 @@ import { SidebarComponent } from './common-ui/sidebar/sidebar.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+  profileService = inject(ProfileService);
+  profiles = [];
+
+  constructor() {
+    this.profileService.getTestAccounts().subscribe((val) => {
+      this.profiles = val;
+    });
+  }
+}
